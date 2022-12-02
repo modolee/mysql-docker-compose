@@ -38,13 +38,13 @@ docker build -t docker-mysql . --platform='linux/amd64'
 
 - Attach Mode
 ```sh
-docker run --interactive --name 'docker-mysql' --env-file=.env --volume ${PWD}/docker/conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf --volume ${PWD}/data:/var/lib/mysql --publish 3306:3306 --restart unless-stopped docker-mysql 
+docker run --interactive --name 'docker-mysql' --env-file=.env --volume ${PWD}/conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf --volume ${PWD}/data:/var/lib/mysql --publish 3306:3306 --restart unless-stopped docker-mysql
 ```
 
 - Detach Mode
 
 ```sh
-docker run --deatch --name 'docker-mysql' --env-file=.env --volume ${PWD}/docker/conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf --volume ${PWD}/data:/var/lib/mysql --publish 3306:3306 --restart unless-stopped docker-mysql 
+docker run --deatch --name 'docker-mysql' --env-file=.env --volume ${PWD}/conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf --volume ${PWD}/data:/var/lib/mysql --publish 3306:3306 --restart unless-stopped docker-mysql
 ```
 
 ### Stop

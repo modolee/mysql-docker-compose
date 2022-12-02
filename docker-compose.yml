@@ -13,7 +13,7 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_INITDB_SKIP_TZINFO=true
     volumes:
-      - ./docker/conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+      - ./conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
       - ./data:/var/lib/mysql
     ports:
       - "3306:3306"
