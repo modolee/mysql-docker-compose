@@ -62,3 +62,12 @@ docker stop docker-mysql
 ```sh
 docker rm docker-mysql
 ```
+
+# 종료 방법
+```sh
+./stop.sh
+```
+
+1. 종료 된 컨테이너와 이미지 제거
+2. 1 + 다운로드 받은 모든 이미지 제거
+3. 2 + 네트워크, 볼륨, 빌드 캐시 제거
