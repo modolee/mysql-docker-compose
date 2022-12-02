@@ -1,0 +1,21 @@
+services:
+  db:
+    image: docker-mysql
+    platform: linux/amd64 # Mac M1, M2를 위한 설정
+    container_name: 'docker-mysql'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_INITDB_SKIP_TZINFO=true
+    volumes:
+      - ./docker/conf/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    
